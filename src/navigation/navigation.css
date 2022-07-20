@@ -1,0 +1,23 @@
+.active p {
+    color: cornflowerblue;
+}
+
+
+.menuBar {
+    /*position: ;*/
+    width: 50px;
+    background-color: #f1f6fa;
+    transition: 300ms ease-in;
+    /*height: 100vh;*/
+
+}
+
+.menuBar ul {
+    position: fixed;
+}
+
+
+.menuBar:hover {
+    width: 200px;
+    transition: 300ms ease-out;
+}

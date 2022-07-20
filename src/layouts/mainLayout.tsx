@@ -15,6 +15,7 @@ const MainLayout: React.FC<IMainLayoutProps> = ({ children }) => {
     <Box style={{
       display: 'flex',
       flexDirection: 'row',
+      position: 'relative'
     }}>
       <NavBar/>
 

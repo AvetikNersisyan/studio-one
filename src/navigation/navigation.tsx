@@ -1,14 +1,24 @@
 import { Box, MenuItem, MenuList, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { IRoutes, routes } from '../routes/routes'
 import { NavLink } from 'react-router-dom'
 import { COLORS, SIZES } from '../constants/theme'
 
+import './navigation.css'
 
 
 const NavBar: React.FC = () => {
 
   const [menuItems, setMenuItems] = useState<IRoutes[]>(routes)
+  const [isHover, setIsHover] = useState<boolean>(false)
+
+  const handleMouseEnter = (): void => {
+    setIsHover(true)
+  }
+
+  const handleMouseLeave = (): void => {
+    setIsHover(false)
+  }
 
   const handleItemSelect = (path: string): void => {
     const items: IRoutes[] = routes.map(route => {
@@ -20,19 +30,23 @@ const NavBar: React.FC = () => {
 
       return route
     })
-
     setMenuItems(items)
   }
 
+
+
   return (
-    <Box style={{
-      backgroundColor: '#f1f6fa',
-    }}>
+    <Box
+      className={'menuBar'}
+      // style={{width: menuBarWidth}}
+      onMouseLeave={handleMouseLeave}
+      onMouseEnter={handleMouseEnter}
+    >
 
       <MenuList>
         {menuItems.map(route => {
           if (route.isShowMenu) {
-            return <MenuItem>
+            return <MenuItem key={route.path}>
               <NavLink onClick={() => handleItemSelect(route.path)} style={{
                 textDecoration: 'none',
                 color: COLORS.black,
@@ -45,9 +59,9 @@ const NavBar: React.FC = () => {
                   gap: SIZES.gap,
                 }}>
                   {route.icon && <route.icon fillColor={route.fillColor}/>}
-                  <Typography>
+                  {isHover && <Typography>
                     {route.label}
-                  </Typography>
+                  </Typography>}
                 </Box>
               </NavLink>
             </MenuItem>
