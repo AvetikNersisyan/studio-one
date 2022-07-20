@@ -6,18 +6,21 @@ import { useCallback, useState } from 'react'
 
 export const useGetNewsData = () => {
 
-const {setNews} = useNewsSliceActionCreators()
+  const { setNews } = useNewsSliceActionCreators()
   const [status, setStatus] = useState(API_STATUS.INITIAL)
 
   const fetch = useCallback(() => {
     setStatus(API_STATUS.LOADING)
-    axios.get(`${API_URL}?country=us&apiKey=${API_KEY}`).then(r =>{
-      console.log(r, 'response')
+    axios.get(`${API_URL}?country=us&apiKey=${API_KEY}`).then(r => {
+      setStatus(API_STATUS.SUCCESS)
       setNews(r.data.articles)
-  })
+    }).catch(err => {
+      console.log(err, 'error fetching data')
+      setStatus(API_STATUS.FAILURE)
+    })
 
-}, [])
+  }, [])
 
-  return {fetch, status}
+  return { fetch, status }
 
 }

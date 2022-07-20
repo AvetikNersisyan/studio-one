@@ -21,6 +21,8 @@ const MainLayout: React.FC<IMainLayoutProps> = ({ children }) => {
 
 
       <Box style={{
+        width: '100%',
+        height: "100vh",
         display: 'flex',
         flexDirection: 'column',
         padding: SIZES.padding1

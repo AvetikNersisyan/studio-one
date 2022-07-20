@@ -7,7 +7,7 @@ import { normalizeDate } from '../../utils/helpers'
 
 
 interface INewsFeedItem extends INewsSlice {
-
+  fibNumber: number
 }
 
 
@@ -19,18 +19,18 @@ const NewsFeedItem: React.FC<INewsFeedItem> = ({
   title,
   publishedAt,
   description,
-  urlToImage
+  urlToImage,
+  fibNumber,
 }) => {
 
-  const {date, time} = normalizeDate(publishedAt)
-
+  const { date, time } = normalizeDate(publishedAt)
 
   return (
     <Box className={'container'}>
       <Box className={'title'}>
         <Typography style={{
           fontSize: TEXT_SIZE.h2,
-          lineHeight: SIZES.margin /7
+          lineHeight: SIZES.margin / 7,
         }}>
           {title}
         </Typography>
@@ -39,15 +39,15 @@ const NewsFeedItem: React.FC<INewsFeedItem> = ({
 
       <img style={{
         width: '100%',
-        objectFit: 'contain'
+        objectFit: 'contain',
       }} src={urlToImage}/>
 
       <Typography style={{
         fontSize: TEXT_SIZE.paragraph * 0.8,
-        color: COLORS.white
+        color: COLORS.white,
       }}>
 
-       Published at:  {date} { time} by {author}
+        Published at: {date} {time} by {author}
 
       </Typography>
 
@@ -55,11 +55,22 @@ const NewsFeedItem: React.FC<INewsFeedItem> = ({
       <Box className={'description'}>
         <Typography style={{
           fontSize: TEXT_SIZE.paragraph,
-          lineHeight: SIZES.margin /7
+          lineHeight: SIZES.margin / 7,
         }}>
           {description}
         </Typography>
       </Box>
+
+
+      <Box className={'fibonacci'}>
+        <Typography style={{
+          fontSize: TEXT_SIZE.paragraph,
+          lineHeight: SIZES.margin / 6,
+        }}>
+          Fibonacci number for this post is: {fibNumber}
+        </Typography>
+      </Box>
+
 
     </Box>
   )

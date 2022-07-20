@@ -2,7 +2,7 @@ import React, { Component, ReactNode } from 'react'
 import { HomePage } from '../pages/HomePage'
 
 import { Icons } from '../assets/svg'
-import { NewsPage } from '../pages/NewsPage'
+import NewsPage  from '../pages/NewsPage'
 
 
 export interface IRoutes {

@@ -16,7 +16,14 @@
 
 }
 
-.title{
+.title {
     padding: 0 36px;
     min-height: 100px;
+}
+
+
+.fibonacci {
+    color: #0649ee;
+    font-weight: 600;
+
 }
