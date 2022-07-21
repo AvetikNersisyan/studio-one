@@ -19,7 +19,7 @@ export const useGetNewsData = () => {
       setStatus(API_STATUS.FAILURE)
     })
 
-  }, [])
+  }, [setNews])
 
   return { fetch, status }
 

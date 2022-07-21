@@ -1,9 +1,9 @@
 import { Container } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { Login } from '../components/login/Login'
 import { useSelector } from 'react-redux'
 import { RootState } from '../store/store'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Navigate,  useNavigate } from 'react-router-dom'
 import { useUserSliceActionCreators } from '../store/slices/userSlice'
 
 
@@ -23,11 +23,10 @@ const {setIsAuth} = useUserSliceActionCreators()
     return email === userName && password === pass
   }
 
-  useEffect(() => {
-    if(isAuth) {
-      navigate('/profile')
-    }
-  },[isAuth])
+  if (isAuth) {
+    return  <Navigate to={'/profile'} replace={true}/>
+  }
+
 
   const handleSubmit = () => {
     if ( isValid()) {

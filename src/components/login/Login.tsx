@@ -1,11 +1,8 @@
 import {
   Box, Button,
-  FormControl, FormGroup,
-  FormHelperText,
-  Input,
-  InputLabel, TextField,
+TextField,
 } from '@mui/material'
-import React, { useState } from 'react'
+import React from 'react'
 import { SIZES } from '../../constants/theme'
 
 
@@ -47,10 +44,8 @@ export const Login: React.FC<ILogin> = ({
         onSubmit()
       }}>
 
-        {/*<InputLabel htmlFor="e-mail">Email address</InputLabel>*/}
         <TextField placeholder={'email'}
-                   // helperText={isError && errorMessage}
-                   // error={isError}
+
                    value={userName}
                    onChange={(e) => setUserName(e.target.value)} id="e-mail"/>
 
@@ -62,7 +57,6 @@ export const Login: React.FC<ILogin> = ({
 
 
         <Button  type={'submit'} onSubmit={(e) => {
-          console.log('button submit')
           e.preventDefault()
         }}
                 variant={'contained'}>

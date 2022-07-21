@@ -1,8 +1,8 @@
-import { Box, Button, Container, Icon, Typography } from '@mui/material'
+import { Box, Button, Container,  Typography } from '@mui/material'
 import React from 'react'
 import './account.css'
 import { SIZES, TEXT_SIZE } from '../../constants/theme'
-import { Icons } from '../../assets/svg/index'
+import { Icons } from '../../assets/svg'
 
 
 interface IAccount {
@@ -31,9 +31,9 @@ export const Account: React.FC<IAccount> = ({
   return (
     <Box className={'card'}>
       <Box>
-        <img className={'cover'} src={coverPhoto}/>
+        <img alt={'Cover'} className={'cover'} src={coverPhoto}/>
       </Box>
-      <img className={'avatar'} src={avatar}/>
+      <img alt ={'Profile'} className={'avatar'} src={avatar}/>
 
       <Container style={{
         display: 'flex',

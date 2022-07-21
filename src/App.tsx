@@ -10,11 +10,10 @@ const App: React.FC = () => {
   const {setIsAuth} = useUserSliceActionCreators()
 
   useEffect( () => {
-
     if (token) {
       setIsAuth(true)
     }
-  }, [])
+  }, [token, setIsAuth])
   return (
     <MainLayout>
       <AppRoutes/>
