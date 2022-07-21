@@ -3,7 +3,7 @@ import { INewsSlice } from '../../types/storeTypes'
 import React from 'react'
 import './newsItem.css'
 import { COLORS, SIZES, TEXT_SIZE } from '../../constants/theme'
-import { normalizeDate } from '../../utils/helpers'
+import { isPrime, normalizeDate } from '../../utils/helpers'
 
 
 interface INewsFeedItem extends INewsSlice {
@@ -29,7 +29,7 @@ const NewsFeedItem: React.FC<INewsFeedItem> = ({
     <Box className={'container'}>
       <Box className={'title'}>
         <Typography style={{
-          fontSize: TEXT_SIZE.h2,
+          fontSize: TEXT_SIZE.h3 * 1.3,
           lineHeight: SIZES.margin / 7,
         }}>
           {title}
@@ -67,7 +67,7 @@ const NewsFeedItem: React.FC<INewsFeedItem> = ({
           fontSize: TEXT_SIZE.paragraph,
           lineHeight: SIZES.margin / 6,
         }}>
-          Fibonacci number for this post is: {fibNumber}
+          Fibonacci number for this post is: {fibNumber} ( {isPrime(fibNumber) ? "Prime": "Not Prime"} )
         </Typography>
       </Box>
 

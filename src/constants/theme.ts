@@ -16,6 +16,7 @@ export const SIZES = {
 export const TEXT_SIZE = {
   h1: 48,
   h2: 36,
+  h3: 24,
   paragraph: 14
 
 }

@@ -1,4 +1,11 @@
-import { Box, MenuItem, MenuList, Typography } from '@mui/material'
+import {
+  Box,
+  Drawer,
+  MenuItem,
+  MenuList,
+  Toolbar,
+  Typography,
+} from '@mui/material'
 import React, { useRef, useState } from 'react'
 import { IRoutes, routes } from '../routes/routes'
 import { NavLink } from 'react-router-dom'
@@ -33,43 +40,44 @@ const NavBar: React.FC = () => {
     setMenuItems(items)
   }
 
-
-
   return (
-    <Box
-      className={'menuBar'}
-      // style={{width: menuBarWidth}}
-      onMouseLeave={handleMouseLeave}
-      onMouseEnter={handleMouseEnter}
-    >
 
-      <MenuList>
-        {menuItems.map(route => {
-          if (route.isShowMenu) {
-            return <MenuItem key={route.path}>
-              <NavLink onClick={() => handleItemSelect(route.path)} style={{
-                textDecoration: 'none',
-                color: COLORS.black,
-              }}
-                       to={route.path}
-              >
-                <Box style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  gap: SIZES.gap,
-                }}>
-                  {route.icon && <route.icon fillColor={route.fillColor}/>}
-                  {isHover && <Typography>
-                    {route.label}
-                  </Typography>}
-                </Box>
-              </NavLink>
-            </MenuItem>
-          }
-        })}
+      <Box
+        className={'menuBar'}
+        onMouseLeave={handleMouseLeave}
+        onMouseEnter={handleMouseEnter}
+      >
+        <Box>
 
-      </MenuList>
 
+        <MenuList>
+          {menuItems.map(route => {
+            if (route.isShowMenu) {
+              return <MenuItem key={route.path}>
+                <NavLink onClick={() => handleItemSelect(route.path)} style={{
+                  textDecoration: 'none',
+                  color: COLORS.black,
+                }}
+                         to={route.path}
+                >
+                  <Box style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    gap: SIZES.gap,
+                  }}>
+                    {route.icon && <route.icon fillColor={route.fillColor}/>}
+                    {isHover && <Typography>
+                      {route.label}
+                    </Typography>}
+                  </Box>
+                </NavLink>
+              </MenuItem>
+            }
+          })}
+
+        </MenuList>
+
+      </Box>
     </Box>
   )
 }

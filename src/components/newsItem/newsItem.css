@@ -10,8 +10,7 @@
     padding: 24px;
     gap: 8px;
     border-radius: 4px;
-    /*box-shadow: 3px 10px rgba(218, 242, 246, 0.34);*/
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 
 
 }

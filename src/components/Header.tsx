@@ -8,7 +8,7 @@ const Header: React.FC = () => {
 
   return (
 
-    <Box style={{
+    <Box  style={{
       width: '100vh',
       height: SIZES.margin * 5,
     }}>

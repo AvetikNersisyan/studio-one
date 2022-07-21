@@ -3,6 +3,8 @@ import { HomePage } from '../pages/HomePage'
 
 import { Icons } from '../assets/svg'
 import NewsPage  from '../pages/NewsPage'
+import { ProfilePage } from '../pages/ProfilePage'
+import { LoginPage } from '../pages/LoginPage'
 
 
 export interface IRoutes {
@@ -35,16 +37,16 @@ export const routes: IRoutes[] = [
     icon: Icons.NewsFeed
   },
   {
-    component: <HomePage/>,
+    component: <LoginPage/>,
     path: '/login',
     secure: false,
     label: 'Login',
     isShowMenu: false
   },
   {
-    component: <HomePage/>,
+    component: <ProfilePage/>,
     path: '/profile',
-    secure: true,
+    secure: false,
     label: 'Profile',
     isShowMenu: true,
     icon: Icons.Account

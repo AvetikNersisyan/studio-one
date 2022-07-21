@@ -15,20 +15,21 @@ const MainLayout: React.FC<IMainLayoutProps> = ({ children }) => {
     <Box style={{
       display: 'flex',
       flexDirection: 'row',
-      position: 'relative'
+      position: 'relative',
+      padding: 0,
+      height: '100%'
     }}>
       <NavBar/>
-
 
       <Box style={{
         width: '100%',
         height: "100vh",
         display: 'flex',
         flexDirection: 'column',
-        padding: SIZES.padding1
+        padding: SIZES.padding1,
       }}>
         <Header/>
-        <Box>
+        <Box >
           {children}
         </Box>
       </Box>

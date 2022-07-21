@@ -6,10 +6,12 @@ import { useDispatch } from 'react-redux';
 
 type InitialStateType = {
   news: INewsSlice[]
+
 }
 
 const initialState: InitialStateType = {
-  news: []
+  news: [],
+
 }
 export const newsSlice = createSlice({
   name: 'news',
