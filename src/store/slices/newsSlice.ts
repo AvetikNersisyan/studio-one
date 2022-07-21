@@ -1,16 +1,20 @@
+import { useDispatch } from 'react-redux';
 import { bindActionCreators, createSlice } from '@reduxjs/toolkit'
 import { INewsSlice } from '../../types/storeTypes'
-import { useDispatch } from 'react-redux';
 
 
 
 type InitialStateType = {
-  news: INewsSlice[]
+  news: INewsSlice[],
+  searchInput: string
+  filterBy: string
 
 }
 
 const initialState: InitialStateType = {
   news: [],
+  searchInput: '',
+  filterBy: ''
 
 }
 export const newsSlice = createSlice({
@@ -19,6 +23,12 @@ export const newsSlice = createSlice({
   reducers: {
     setNews: (state, {payload}) => {
       state.news = payload
+    },
+    setSearchValue: (state, {payload}) => {
+      state.searchInput = payload
+    },
+    setFilterKeyword: (state, {payload}) => {
+      state.filterBy = payload
     }
   }
 

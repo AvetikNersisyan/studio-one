@@ -6,7 +6,7 @@
 .menuBar {
 
     width: 50px;
-    background-color: #f1f6fa;
+    background-color: rgb(239 242 245);
     transition: 300ms ease-in;
     height: 100vh;
     position: sticky;

@@ -16,3 +16,9 @@ export const isPrime = (n: number): boolean => {
   }
   return n > 1
 }
+
+export const FILTER = {
+  AUTHOR: 'author',
+  TITLE: 'title',
+  DESCRIPTION: 'description'
+}

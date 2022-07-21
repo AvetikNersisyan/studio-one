@@ -1,5 +1,7 @@
 import React from 'react'
-import { BottomNavigation, Box, Container } from '@mui/material'
+
+import {  Box } from '@mui/material'
+
 import NavBar from '../navigation/navigation'
 import Header from '../components/Header'
 import { SIZES } from '../constants/theme'
@@ -27,9 +29,12 @@ const MainLayout: React.FC<IMainLayoutProps> = ({ children }) => {
         display: 'flex',
         flexDirection: 'column',
         padding: SIZES.padding1,
+        paddingTop: 0
       }}>
         <Header/>
-        <Box >
+        <Box  style={{
+          marginTop: SIZES.margin * 10,
+        }}>
           {children}
         </Box>
       </Box>

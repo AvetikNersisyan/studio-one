@@ -1,14 +1,15 @@
+import React, {  useState } from 'react'
+
 import {
   Box,
-  Drawer,
   MenuItem,
   MenuList,
-  Toolbar,
   Typography,
 } from '@mui/material'
-import React, { useRef, useState } from 'react'
-import { IRoutes, routes } from '../routes/routes'
 import { NavLink } from 'react-router-dom'
+
+
+import { IRoutes, routes } from '../routes/routes'
 import { COLORS, SIZES } from '../constants/theme'
 
 import './navigation.css'
@@ -53,8 +54,8 @@ const NavBar: React.FC = () => {
         <MenuList>
           {menuItems.map(route => {
             if (route.isShowMenu) {
-              return <MenuItem key={route.path}>
-                <NavLink onClick={() => handleItemSelect(route.path)} style={{
+              return <MenuItem onClick={() => handleItemSelect(route.path)}  key={route.path}>
+                <NavLink style={{
                   textDecoration: 'none',
                   color: COLORS.black,
                 }}
@@ -73,6 +74,7 @@ const NavBar: React.FC = () => {
                 </NavLink>
               </MenuItem>
             }
+            else return null
           })}
 
         </MenuList>
